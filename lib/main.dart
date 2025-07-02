@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      // home: OnBoardingScreen(),
-      home: MainPage(),
+      home: OnBoardingScreen(),
+      // home: MainPage(),
     );
   }
 }

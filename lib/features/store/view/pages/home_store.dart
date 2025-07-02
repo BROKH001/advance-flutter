@@ -1,4 +1,3 @@
-import 'package:e_commerce_app/utils/constants/constants_app.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/constants/size.dart';
@@ -24,7 +23,10 @@ class _HomeStoreState extends State<HomeStore> {
 
   AppBar _buildAppBar() {
       return AppBar(
-        title: const Text("Home", style: TextStyle(fontSize: 25)),
+        title: ListTile(
+          title: Text("SunHeng", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+          subtitle: Text('📌location', style:  TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
+        ),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
@@ -42,7 +44,7 @@ class _HomeStoreState extends State<HomeStore> {
         actions: [
           IconButton(
             icon: const Icon(
-              Icons.shopify_outlined,
+              Icons.notifications_none_rounded,
               size: TSizes.iconLg,
             ),
             onPressed: () {},

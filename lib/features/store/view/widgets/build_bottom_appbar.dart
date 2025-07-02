@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
 // import 'package:homework/features/store/view/home_store.dart';
-// import 'package:homework/features/store/view/search_page.dart';
+// import 'package:homework/features/store/view/service_page.dart';
 
 // import '../account_page.dart';
-// import '../grocery_page.dart';
+// import '../cart_page.dart';
 
 // class BuildBottomAppBar extends StatefulWidget {
 //   const BuildBottomAppBar({super.key});

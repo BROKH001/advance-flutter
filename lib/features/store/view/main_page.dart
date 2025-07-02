@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 import 'pages/account_page.dart';
-import 'pages/grocery_page.dart';
+import 'pages/cart_page.dart';
 import 'pages/home_store.dart';
-import 'pages/search_page.dart';
+import 'pages/service_page.dart';
 import 'widgets/build_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -30,8 +31,8 @@ class _MainPageState extends State<MainPage> {
       index: _currentIndex,
       children: const [
         HomeStore(),
-        GroceryPage(),
-        SearchPage(),
+        ServicePage(),
+        CartPage(),
         AccountPage(),
       ],
     );
@@ -47,34 +48,34 @@ class _MainPageState extends State<MainPage> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
-            label: 'Food',
+            icon: const Icon(Iconsax.home),
+            label: 'Home',
             activeIcon: Icon(
-              Icons.home_outlined,
+              Iconsax.home_15,
               color: Colors.green[700],
             ),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.store),
-            label: 'Grocery',
+            icon: const Icon(Iconsax.shop),
+            label: 'Service',
             activeIcon: Icon(
-              Icons.store_outlined,
+              Iconsax.shop5,
               color: Colors.green[700],
             ),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.search),
-            label: 'Search',
+            icon: const Icon(Iconsax.shopping_cart),
+            label: 'Cart',
             activeIcon: Icon(
-              Icons.search_outlined,
+              Iconsax.shopping_cart5,
               color: Colors.green[700],
             ),
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
+            icon: const Icon(Iconsax.profile_circle4),
             label: 'Account',
             activeIcon: Icon(
-              Icons.person_outline,
+              Iconsax.profile_circle5,
               color: Colors.green[700],
             ),
           ),
@@ -89,8 +90,8 @@ class _MainPageState extends State<MainPage> {
           size: 25,
         ),
         elevation: 0,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
+        // showSelectedLabels: true,
+        // showUnselectedLabels: true,
         iconSize: 25,
         unselectedFontSize: 14,
         selectedFontSize: 18,
