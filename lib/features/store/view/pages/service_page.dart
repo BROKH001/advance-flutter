@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/size.dart';
-import '../../../../utils/helper/helper_functions.dart';
 import '../widgets/build_drawer.dart';
 import '../widgets/title_appBar.dart';
 import 'detail_page.dart';
@@ -105,89 +104,31 @@ class _ServicePageState extends State<ServicePage> {
                                 width: 1,
                               ),
                             ),
+                            // image: DecorationImage(image: AssetImage(''))
                           ),
-                          child: Column(
-                            spacing: 10,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: TSizes.productItemHeight - 30,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(TSizes.borderRadiusMd),
-                                      topRight: Radius.circular(TSizes.borderRadiusMd),
-                                    )
+                        ),
+                        Positioned(
+                          left: 15,
+                          bottom: 20,
+                          child: Container(
+                            width: 150,
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.transparent.withOpacity(0.05),
+                                borderRadius: BorderRadius.circular(8)
+                            ),
+                            child: Expanded(
+                              flex: 1,
+                              child: Text('Service',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text('Product Name', style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-
-                              ),
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    'price: ',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                  Text(
-                                    ' \$${1} ',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                          top: 15,
-                          right: 15,
-                          child: GestureDetector(
-                            child: Container(
-                              height: 30,
-                              width: 30,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Icon(
-                                Iconsax.bookmark_21, // Use different icons
-                                color: _isClick ? Colors.white : Colors.lightGreenAccent,
-                                size: TSizes.iconLg,
-                              ),
-                            ),
-                            onTap: () {
-                              setState(() {
-                                _isClick = !_isClick; // Toggle the state
-                              });
-                            },
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 15,
-                          right: 15,
-                          child: GestureDetector(
-                            onTap: (){
-                              Get.to(() => DetailPage());
-                            },
-                            child: Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Icon(Iconsax.add, color: Colors.white,),
                             ),
                           ),
                         ),
@@ -195,13 +136,11 @@ class _ServicePageState extends State<ServicePage> {
                     ),
                   ),
                   onTap: () {
-                    // Click on card
                     Get.to(() => DetailPage());
                   },
                 );
               },
             ),
-            const SizedBox(height: TSizes.defaultSpace),
           ],
         ),
       ),

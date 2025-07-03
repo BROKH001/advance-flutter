@@ -1,4 +1,6 @@
+import 'package:e_commerce_app/features/store/view/pages/ordersummeri.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/size.dart';
@@ -287,7 +289,10 @@ class _CartPageState extends State<CartPage> {
           ),
           // Checkout Button
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 30
+            ),
             child: Container(
               width: double.infinity,
               height: 60,
@@ -296,23 +301,24 @@ class _CartPageState extends State<CartPage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Center(child: Row(
-                        children: [
-                          Text('Proceeding to checkout - Total : ', style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: TSizes.md,
-                          ),),
-                          Text('\$ ${totalAmount.toStringAsFixed(2)}', style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: TSizes.lg,
-                          ),),
-                        ],
-                      )),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  //   SnackBar(
+                  //     content: Center(child: Row(
+                  //       children: [
+                  //         Text('Proceeding to checkout - Total : ', style: TextStyle(
+                  //           fontWeight: FontWeight.w600,
+                  //           fontSize: TSizes.md,
+                  //         ),),
+                  //         Text('\$ ${totalAmount.toStringAsFixed(2)}', style: TextStyle(
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: TSizes.lg,
+                  //         ),),
+                  //       ],
+                  //     )),
+                  //     backgroundColor: Colors.green,
+                  //   ),
+                  // );
+                  Get.to(OrderSummaryPage());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
