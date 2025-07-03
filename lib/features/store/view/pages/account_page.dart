@@ -116,6 +116,7 @@ class _AccountPageState extends State<AccountPage> {
 
   AppBar _buildAppBar() {
     return AppBar(
+      backgroundColor: Colors.white,
       title: TAppBar(
         title: 'Profile',
       ),

@@ -65,10 +65,6 @@ flutter:
     # --------------  //    Logo    //  -------------------- #
     - assets/logos/
 
-    # --------------  //    Animation   //  ---------------- #
-
-    - assets/animations/
-
   # ================= //    How to Customise Fonts  // ==================== #
 
   #  fonts:

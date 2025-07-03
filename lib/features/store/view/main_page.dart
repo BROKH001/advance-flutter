@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
   Widget _buildBody() {
     return IndexedStack(
       index: _currentIndex,
-      children: const [
+      children: [
         HomeStore(),
         ServicePage(),
         CartPage(),

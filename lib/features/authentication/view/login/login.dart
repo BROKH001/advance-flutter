@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
@@ -14,7 +15,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  late final TextEditingController _emailController = TextEditingController();
+  late final TextEditingController _usernameController = TextEditingController();
+  late final TextEditingController _passwordController = TextEditingController();
+
   bool rememberMe = false;
+  bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,13 +68,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: TSizes.defaultSpace),
-                const TextField(
+                TextField(
+                  // Controller
                   decoration: InputDecoration(
                     labelText: "Password",
                     border: OutlineInputBorder(),
-                    suffixIcon: Icon(Icons.visibility_off),
+                    suffixIcon: IconButton(
+                      icon: Icon(_isSelected ? Iconsax.eye_slash : Iconsax.eye),
+                      onPressed: () {
+                        setState(() {
+                          _isSelected = !_isSelected;
+                        });
+                      },
+                    ),
                   ),
-                  obscureText: true,
+                  obscureText: _isSelected ? true : false,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
