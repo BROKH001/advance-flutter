@@ -1,11 +1,9 @@
-import 'package:e_commerce_app/features/store/view/pages/ordersummeri.dart';
+import 'package:e_commerce_app/features/store/view/pages/report_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/size.dart';
-import '../widgets/build_drawer.dart';
-import '../widgets/title_appBar.dart';
 
 class CartItem {
   final String name;
@@ -90,12 +88,9 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const BuildDrawer(),
         appBar: AppBar(
           backgroundColor: Colors.white,
-        title: TAppBar(
-            title: 'Cart'
-        ),
+        title:Text('Cart'),
         centerTitle: true,
         leading: Builder(
           builder: (BuildContext context) {

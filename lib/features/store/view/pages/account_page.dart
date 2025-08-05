@@ -1,8 +1,9 @@
-import 'package:e_commerce_app/features/store/view/widgets/build_drawer.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/constants/size.dart';
-import '../widgets/title_appBar.dart';
+import '../../../authentication/controllers/auth/logout_controller.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -12,10 +13,10 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: BuildDrawer(),
       appBar: _buildAppBar(),
       body: Column(
         children: [
@@ -26,7 +27,7 @@ class _AccountPageState extends State<AccountPage> {
 
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15),
-                  child: Container(
+                  child: SizedBox(
                     height: 180,
                     width: double.infinity,
                     child: Stack(
@@ -117,9 +118,7 @@ class _AccountPageState extends State<AccountPage> {
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
-      title: TAppBar(
-        title: 'Profile',
-      ),
+      title: Text('Profile'),
       centerTitle: true,
       leading: Builder(
         builder: (BuildContext context) {
@@ -212,7 +211,9 @@ class MenuList extends StatelessWidget {
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             splashColor: Colors.green.shade200.withOpacity(0.5),
             onTap: () {
-              // Get.to another page ......
+              if (menuItems[index]["text"] == "Logout") {
+                Get.find<LogoutController>().logout();
+              }
             },
           ),
         );

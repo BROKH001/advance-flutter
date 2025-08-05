@@ -1,9 +1,9 @@
 
-
-import 'package:e_commerce_app/features/store/view/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../navigator_screen.dart';
 
 class TrackOrderPage extends StatefulWidget {
   @override
@@ -23,7 +23,7 @@ class _TrackOrderPageState extends State<TrackOrderPage> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
           onPressed: () {
-            Get.to(MainPage());
+            Get.to(() => NavigationMenu());
           },
         ),
         title: Text(

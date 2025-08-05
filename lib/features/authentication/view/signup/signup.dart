@@ -1,26 +1,23 @@
+import 'package:e_commerce_app/features/authentication/controllers/auth/signup_controller.dart';
+import 'package:e_commerce_app/features/authentication/view/signup/widgets/signup_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
-import '../../../store/view/main_page.dart';
 import '../login/login.dart';
 
-class SignUpScreen extends StatefulWidget {
+class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
-}
 
-class _SignUpScreenState extends State<SignUpScreen> {
-  bool agree = false;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.only(
-          top: TSizes.appBarHeight,
+          // top: TSizes.appBarHeight,
           left: TSizes.defaultSpace,
           right: TSizes.defaultSpace,
           bottom: TSizes.defaultSpace,
@@ -45,92 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: TSizes.defaultSpace / 2),
-              const SizedBox(height: TSizes.defaultSpace),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Full Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Confirm Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: TSizes.defaultSpace),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Phone Number",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                keyboardType: TextInputType.phone,
-              ),
-              const SizedBox(height: TSizes.defaultSpace / 2),
-              Row(
-                children: [
-                  Checkbox(
-                      value: agree,
-                      onChanged: (onChanged) {
-                        setState(() {
-                          agree = onChanged ?? true;
-                        });
-                      }),
-                  const Expanded(
-                    child: Text(
-                      "I agree to the Terms and Conditions",
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(height: TSizes.defaultSpace),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                  ),
-                  onPressed: () {
-                    Get.to(
-                      const MainPage(),
-                    );
-                  },
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+              const TSignUpForm(),
               const SizedBox(height: TSizes.defaultSpace),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

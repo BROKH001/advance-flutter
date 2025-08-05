@@ -1,12 +1,12 @@
 
 
-import 'package:e_commerce_app/features/store/view/main_page.dart';
 import 'package:e_commerce_app/features/store/view/pages/cart_page.dart';
-import 'package:e_commerce_app/features/store/view/pages/home_store.dart';
+import 'package:e_commerce_app/features/store/view/home/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../navigator_screen.dart';
 import '../../../../utils/constants/size.dart';
 
 class DetailPage extends StatefulWidget {
@@ -339,7 +339,7 @@ class _DetailPageState extends State<DetailPage> {
           height: 60,
           child: ElevatedButton(
             onPressed: () {
-              Get.to(MainPage());
+              Get.to(NavigationMenu());
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Center(child: Text('Added ${quantity}kg Rice Seeds to cart!'),),

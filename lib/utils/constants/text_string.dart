@@ -17,4 +17,23 @@ class TTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "User Name";
+
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String username = "Username";
+
+  static const String email = "E-Mail";
+  static const String password = "Password";
+  static const String confirmPassword = "Confirm Password";
+  static const String phoneNumber = "Phone Number";
+  static const String address = "Address";
+
+  // -- Verify Email
+  static const String title = 'Verify your email address!';
+  static const String subTitle = 'Congratulation Your Account Awaits Verify Your Email to Continue Shopping and Experiences a World of Unrivalled Deals and Personalized Offers.';
+  static const String support = 'khmermarket@support.com';
+
+  // -- Success Screen
+  static const String createSuccess = 'Your Account Successfully Created!';
+  static const String subSuccess = 'Welcome Your Ultimate Shopping Destination: \nYour Account Created. Unleash the joy of \nSeamless Online Shopping.';
 }

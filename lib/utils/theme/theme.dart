@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'customs/appbar_theme.dart';
 import 'customs/bottom_sheet_theme.dart';
 import 'customs/checkbox_theme.dart';
 import 'customs/chip_theme.dart';
 import 'customs/elevated_button_theme.dart';
-import 'customs/icon_theme.dart';
 import 'customs/outline_button_theme.dart';
 import 'customs/text_field_theme.dart';
 import 'customs/text_theme.dart';
@@ -15,7 +15,7 @@ class TAppTheme {
   /// Light Theme
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: GoogleFonts.poppins(fontWeight: FontWeight.w700).fontFamily,
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     textTheme: TTextTheme.lightTextTheme,
@@ -33,7 +33,7 @@ class TAppTheme {
   /// Dark Theme
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: GoogleFonts.poppins(fontWeight: FontWeight.w700).fontFamily,
     brightness: Brightness.dark,
     primaryColor: Colors.blue,
     textTheme: TTextTheme.darkTextTheme,
