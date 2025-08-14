@@ -1,13 +1,9 @@
 
-
-import 'package:e_commerce_app/features/store/view/pages/cart_page.dart';
-import 'package:e_commerce_app/features/store/view/home/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../navigator_screen.dart';
-import '../../../../utils/constants/size.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});

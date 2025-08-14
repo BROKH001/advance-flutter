@@ -39,7 +39,7 @@ class TColors {
 
   // Error and Validation Colors
   static const Color error = Color(0xFFD32F2F);
-  static const Color success = Color(0xFF38E3C);
+  static const Color success = Color(0xF548E150);
   static const Color warning = Color(0xFFFF5700);
   static const Color info = Color(0xFF1976D2);
 

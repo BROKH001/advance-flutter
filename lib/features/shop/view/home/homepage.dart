@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:e_commerce_app/features/store/view/home/widgets/home_category.dart';
-import 'package:e_commerce_app/features/store/view/home/widgets/promo_slider.dart';
-import 'package:e_commerce_app/features/store/view/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/utils/constants/image.dart';
 import 'package:e_commerce_app/utils/constants/size.dart';
 import 'package:iconsax/iconsax.dart';
@@ -10,9 +6,12 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/Layout/grid_layout.dart';
 import '../../../../common/widgets/custom_shap/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shap/containers/searchbar_container.dart';
-import '../../../../common/widgets/product/product_cart/product_cart_horizontal.dart';
 import '../../../../common/widgets/product/product_cart/product_cart_vertical.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
+
+import 'widgets/home_appbar.dart';
+import 'widgets/home_category.dart';
+import 'widgets/promo_slider.dart';
 
 
 class HomeStore extends StatelessWidget {
@@ -59,14 +58,12 @@ class HomeStore extends StatelessWidget {
               child: Column(
                 children: [
                   TPromoSlider(banners: [TImage.banner1, TImage.banner2, TImage.banner3]),
+                  const SizedBox(height: TSizes.spaceBtwItems),
 
                   /// -- GridView Products
-                  const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TGridLayout(itemCount: 4,itemBuilder: (context, index) => const TProductCartVertical()),
+                  TSectionHeading(title: 'Popular Products', showActionButton: true, onPressed: () {}),
+                  TGridLayout(itemCount: 4, itemBuilder: (context, index) => const TProductCartVertical()),
 
-                  /// -- Product Horizontal
-                  const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  const TProductCartHorizontal(),
                 ],
               ),
             ),

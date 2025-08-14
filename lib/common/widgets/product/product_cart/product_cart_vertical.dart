@@ -26,27 +26,26 @@ class TProductCartVertical extends StatelessWidget {
         width: 180,
         padding: EdgeInsets.all(1),
         decoration: BoxDecoration(
-          boxShadow: [TShadow.verticalProductShadow, TShadow.horizontalProductShadow],
+          boxShadow: [TShadow.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.dark.withOpacity(0.7) : TColors.white,
+          color: dark ? TColors.dark : TColors.light,
         ),
         child: Column(
           children: [
             TRoundedContainer(
               height: 180,
               padding: EdgeInsets.all(TSizes.md),
-              backgroundColor: dark ? TColors.dark.withOpacity(0.9) : Colors.white.withOpacity(0.9),
+              backgroundColor: dark ? TColors.darkerGrey.withOpacity(0.2) : TColors.white,
               child: Stack(
                 children: [
-                  TRoundedImage(imageUrl: TImage.product1, applyImageRadius: true, backgroundColor: dark ? TColors.dark.withOpacity(0.9) : Colors.white.withOpacity(0.9)),
+                  TRoundedImage(imageUrl: TImage.product1, applyImageRadius: true, backgroundColor: dark ? Colors.transparent : TColors.white),
 
                   // -- Discount Text
                   Positioned(
                     top: 12,
                       child: TRoundedContainer(
-                        radius: TSizes.sm,
                         padding: EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
-                        backgroundColor: TColors.secondary.withOpacity(0.8),
+                        backgroundColor: TColors.secondary,
                         child: Text('25 %', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
                       ),
                   ),
@@ -65,7 +64,6 @@ class TProductCartVertical extends StatelessWidget {
                 children: [
                   TProductTitle(title: 'Green Nike Air Shoes',),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-
                   // -- Brand Name
                   Row(
                     children: [
@@ -81,7 +79,7 @@ class TProductCartVertical extends StatelessWidget {
                       Text('\$ 25.5', style: Theme.of(context).textTheme.headlineMedium, maxLines: 1, overflow: TextOverflow.ellipsis),
                       Container(
                         decoration: BoxDecoration(
-                          color: TColors.dark,
+                          color: dark ? TColors.success : TColors.primary,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(TSizes.cardRadiusMd),
                             bottomRight: Radius.circular(TSizes.cardRadiusMd),
@@ -90,7 +88,7 @@ class TProductCartVertical extends StatelessWidget {
                         child: SizedBox(
                           height: TSizes.iconLg * 1.2,
                           width: TSizes.iconLg * 1.2,
-                          child: IconButton(onPressed: () {}, icon: Icon(Iconsax.add, color: TColors.white)),
+                          child: Center(child: IconButton(onPressed: () {}, icon: Icon(Iconsax.add, color: dark ? TColors.white : TColors.white))),
                         ),
                       ),
                     ],

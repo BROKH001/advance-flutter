@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'features/store/view/pages/account_page.dart';
-import 'features/store/view/pages/cart_page.dart';
-import 'features/store/view/home/homepage.dart';
-import 'features/store/view/favorite/favorite_page.dart';
+import 'features/shop/view/favorite/favorite_page.dart';
+import 'features/shop/view/home/homepage.dart';
+import 'features/shop/view/pages/account_page.dart';
+import 'features/shop/view/store/store.dart';
+
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -30,8 +31,8 @@ class _NavigationMenuState extends State<NavigationMenu> {
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
           destinations: [
             NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: "Service"),
-            NavigationDestination(icon: Icon(Iconsax.shopping_cart), label: "Cart"),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: "Store"),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: "Favorite"),
             NavigationDestination(icon: Icon(Iconsax.profile_circle4), label: "Account"),
           ],
         ),
@@ -45,8 +46,8 @@ class NavigationMenuController extends GetxController {
 
   final screens = [
     HomeStore(),
+    StorePage(),
     FavoritePage(),
-    CartPage(),
     AccountPage()
   ];
 }

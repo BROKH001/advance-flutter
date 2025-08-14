@@ -6,7 +6,7 @@ import '../../../utils/constants/size.dart';
 class TGridLayout extends StatelessWidget {
   const TGridLayout({
     super.key,
-    this.mainAxisExtent = 288,
+    this.mainAxisExtent = 276,
     required this.itemCount,
     required this.itemBuilder,
   });
@@ -25,7 +25,7 @@ class TGridLayout extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: TSizes.gridViewSpacing,
         mainAxisSpacing: TSizes.gridViewSpacing,
-        mainAxisExtent: mainAxisExtent,
+        mainAxisExtent: mainAxisExtent
       ),
       itemBuilder: itemBuilder,
     );
