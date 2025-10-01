@@ -3,7 +3,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../popup/loaders.dart';
 
 class NetWorkManager extends GetxController {
   static NetWorkManager get instance => Get.find();

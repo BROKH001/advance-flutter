@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../navigator_screen.dart';
-import '../verify_email.dart';
 
 class TSignUpForm extends StatelessWidget {
   const TSignUpForm({super.key});

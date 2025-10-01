@@ -1,13 +1,10 @@
 import 'package:e_commerce_app/features/authentication/view/login/widgets/login_form.dart';
-import 'package:e_commerce_app/features/authentication/view/password_configuration/forget_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
 import '../../controllers/auth/login_controller.dart';
-import '../signup/signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

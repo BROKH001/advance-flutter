@@ -4,8 +4,10 @@ import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../features/shop/view/product_detail/product_detail_screen.dart';
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
 import '../../icons/circular_icons.dart';
@@ -21,7 +23,7 @@ class TProductCartVertical extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: () => Get.to(const TProductDetailScreen()),
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),
@@ -35,7 +37,7 @@ class TProductCartVertical extends StatelessWidget {
             TRoundedContainer(
               height: 180,
               padding: EdgeInsets.all(TSizes.md),
-              backgroundColor: dark ? TColors.darkerGrey.withOpacity(0.2) : TColors.white,
+              backgroundColor: dark ? TColors.darkerGrey : TColors.white,
               child: Stack(
                 children: [
                   TRoundedImage(imageUrl: TImage.product1, applyImageRadius: true, backgroundColor: dark ? Colors.transparent : TColors.white),

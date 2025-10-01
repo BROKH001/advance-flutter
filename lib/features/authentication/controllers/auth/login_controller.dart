@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../navigator_screen.dart';
-import '../../../store/model/UserModel.dart';
+import '../../../shop/model/UserModel.dart';
 
 class LoginController extends GetxController{
 

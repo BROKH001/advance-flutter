@@ -44,12 +44,16 @@ dependencies:
 
   # ----------- Other ------------ #
   flutter_secure_storage: ^9.2.4
+  flutter_rating_bar: ^4.0.1
   shared_preferences: ^2.5.2
   google_fonts: ^6.3.0
   image_picker: ^1.1.2
 
   # ----------- Network ------------ #
   connectivity_plus: ^6.1.4
+
+  # Product Specific
+  readmore: ^3.0.0
 
 
 dev_dependencies:
@@ -71,6 +75,7 @@ flutter:
     - assets/images/productions/
     - assets/images/others/
     - assets/images/banners/
+    - assets/images/user/
 
     # --------------  //    Logo    //  -------------------- #
     - assets/logos/

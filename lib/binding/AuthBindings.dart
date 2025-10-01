@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:e_commerce_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:e_commerce_app/features/authentication/controllers/auth/login_controller.dart';
 import 'package:e_commerce_app/features/authentication/controllers/auth/logout_controller.dart';
 

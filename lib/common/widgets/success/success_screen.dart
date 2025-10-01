@@ -1,12 +1,8 @@
 import 'package:e_commerce_app/common/style/spacing_style.dart';
-import 'package:e_commerce_app/features/authentication/view/login/login.dart';
-import 'package:e_commerce_app/utils/constants/image.dart';
 import 'package:e_commerce_app/utils/constants/size.dart';
 import 'package:e_commerce_app/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../utils/constants/text_string.dart';
 
 class SuccessScreen extends StatelessWidget {
   final String image, title, subTitle;

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 
+import 'features/personalization/view/settings/settings.dart';
 import 'features/shop/view/favorite/favorite_page.dart';
 import 'features/shop/view/home/homepage.dart';
-import 'features/shop/view/pages/account_page.dart';
 import 'features/shop/view/store/store.dart';
+import 'utils/helper/helper_functions.dart';
+import 'utils/constants/colors.dart';
 
 
 class NavigationMenu extends StatefulWidget {
@@ -20,13 +22,14 @@ class _NavigationMenuState extends State<NavigationMenu> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
       bottomNavigationBar: Obx(() =>
         NavigationBar(
           height: 80,
           elevation: 0,
-          backgroundColor: Colors.white,
+          backgroundColor: dark ? TColors.darkContainer : TColors.light,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
           destinations: [
@@ -48,6 +51,6 @@ class NavigationMenuController extends GetxController {
     HomeStore(),
     StorePage(),
     FavoritePage(),
-    AccountPage()
+    SettingsScreen()
   ];
 }

@@ -48,6 +48,7 @@ class HomeStore extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -63,7 +64,6 @@ class HomeStore extends StatelessWidget {
                   /// -- GridView Products
                   TSectionHeading(title: 'Popular Products', showActionButton: true, onPressed: () {}),
                   TGridLayout(itemCount: 4, itemBuilder: (context, index) => const TProductCartVertical()),
-
                 ],
               ),
             ),
