@@ -6,7 +6,6 @@ class SProductCart extends StatelessWidget {
   const SProductCart({super.key, required this.images});
 
   final List<String> images;
-  final bool _isClick = false;
   final bool _isBookmark = false;
 
 

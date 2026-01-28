@@ -29,8 +29,8 @@ class TTexts {
   static const String address = "Address";
 
   // -- Verify Email
-  static const String title = 'Verify your email address!';
-  static const String subTitle = 'Congratulation Your Account Awaits Verify Your Email to Continue Shopping and Experiences a World of Unrivalled Deals and Personalized Offers.';
+  static const String confirmEmail = 'Verify your email address!';
+  static const String confirmEmailSubtitle = 'Congratulation Your Account Awaits Verify Your Email to Continue Shopping and Experiences a World of Unrivalled Deals and Personalized Offers.';
   static const String support = 'khmermarket@support.com';
 
   // -- Success Screen

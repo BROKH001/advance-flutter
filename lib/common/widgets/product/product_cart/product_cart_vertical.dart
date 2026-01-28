@@ -35,7 +35,7 @@ class TProductCartVertical extends StatelessWidget {
         child: Column(
           children: [
             TRoundedContainer(
-              height: 180,
+              height: 170,
               padding: EdgeInsets.all(TSizes.md),
               backgroundColor: dark ? TColors.darkerGrey : TColors.white,
               child: Stack(
@@ -58,42 +58,47 @@ class TProductCartVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-
             // -- Detail Text
             Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
+                spacing: 4,
                 children: [
                   TProductTitle(title: 'Green Nike Air Shoes',),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
                   // -- Brand Name
-                  Row(
-                    children: [
-                      Text('Nike',overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium) ,
-                      const SizedBox(width: TSizes.xs),
-                      const Icon(Iconsax.verify5, size: TSizes.iconSm, color: TColors.primary,)
-                    ],
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        Text('Nike',overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium) ,
+                        const SizedBox(width: TSizes.xs),
+                        const Icon(Iconsax.verify5, size: TSizes.iconSm, color: TColors.primary,)
+                      ],
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Product Price
-                      Text('\$ 25.5', style: Theme.of(context).textTheme.headlineMedium, maxLines: 1, overflow: TextOverflow.ellipsis),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: dark ? TColors.success : TColors.primary,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(TSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(TSizes.cardRadiusMd),
-                          )
+                  // -- Price
+                  SizedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Product Price
+                        Text('\$ 25.5', style: Theme.of(context).textTheme.headlineMedium, maxLines: 1, overflow: TextOverflow.ellipsis),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: dark ? TColors.success : TColors.primary,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(TSizes.cardRadiusMd),
+                              bottomRight: Radius.circular(TSizes.cardRadiusMd),
+                            )
+                          ),
+                          child: SizedBox(
+                            height: TSizes.iconLg * 1.2,
+                            width: TSizes.iconLg * 1.2,
+                            child: Center(child: IconButton(onPressed: () {}, icon: Icon(Iconsax.add, color: dark ? TColors.white : TColors.white))),
+                          ),
                         ),
-                        child: SizedBox(
-                          height: TSizes.iconLg * 1.2,
-                          width: TSizes.iconLg * 1.2,
-                          child: Center(child: IconButton(onPressed: () {}, icon: Icon(Iconsax.add, color: dark ? TColors.white : TColors.white))),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 ],
               ),

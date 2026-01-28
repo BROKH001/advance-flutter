@@ -115,8 +115,8 @@ class _TLoginFormState extends State<TLoginForm> {
               onPressed: () {
                 Get.to(
                   SignUpScreen(),
-                  transition: Transition.native,
-                  duration: const Duration(milliseconds: 1000),
+                  transition: Transition.topLevel,
+                  duration: const Duration(milliseconds: 1500),
                 );
               },
               child: const Text("Create an Account", style: TextStyle(color: Colors.blue)),

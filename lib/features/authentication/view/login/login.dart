@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
+import '../../../../utils/helper/helper_functions.dart';
 import '../../controllers/auth/login_controller.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,11 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(
-            // top: TSizes.appBarHeight,
+            top: TSizes.appBarHeight,
             left: TSizes.defaultSpace,
             right: TSizes.defaultSpace,
             bottom: TSizes.defaultSpace,
@@ -32,13 +34,13 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Image(
-                  image: AssetImage(TImage.lightModeLogo),
+                Image(
+                  image: dark ? AssetImage(TImage.darkModeLogo) : AssetImage(TImage.lightModeLogo),
                   fit: BoxFit.cover,
-                  width: 150,
-                  height: 80,
+                  width: THelperFunctions.screenWidth() * 0.5,
+                  height: THelperFunctions.screenWidth() * 0.3,
                 ),
-                const SizedBox(height: TSizes.defaultSpace),
+                const SizedBox(height: TSizes.spaceBtwSections),
                 const Text(
                   "Welcome Back",
                   textAlign: TextAlign.center,

@@ -30,10 +30,11 @@ class THorizontalImageText extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
         child: Column(
+          spacing: 5,
           children: [
             Container(
-              height: 56,
-              width: 56,
+              height: 54,
+              width: 54,
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                 color: backgroundColor ?? (dark ? TColors.black : TColors.white),

@@ -1,7 +1,10 @@
-import 'package:e_commerce_app/features/authentication/controllers/auth/signup_controller.dart';
 import 'package:e_commerce_app/features/authentication/view/signup/widgets/signup_form.dart';
+import 'package:e_commerce_app/utils/helper/helper_functions.dart';
+import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+
 import '../../../../utils/constants/image.dart';
 import '../../../../utils/constants/size.dart';
 import '../login/login.dart';
@@ -12,12 +15,12 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SignupController());
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: SAppBar(leadingIcon: Iconsax.arrow_left_1, leadingOnPressed: () => Get.to(() => LoginScreen(), transition: Transition.topLevel, duration: const Duration(milliseconds: 2000))),
       body: Padding(
         padding: const EdgeInsets.only(
-          // top: TSizes.appBarHeight,
+          top: TSizes.defaultSpace,
           left: TSizes.defaultSpace,
           right: TSizes.defaultSpace,
           bottom: TSizes.defaultSpace,
@@ -26,11 +29,11 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Image(
-                image: AssetImage(TImage.lightModeLogo),
+              Image(
+                image: dark ? AssetImage(TImage.darkModeLogo) : AssetImage(TImage.lightModeLogo),
                 fit: BoxFit.cover,
-                width: 150,
-                height: 80,
+                width: THelperFunctions.screenWidth() * 0.5,
+                height: THelperFunctions.screenWidth() * 0.3,
               ),
               const SizedBox(height: TSizes.defaultSpace),
               const Text(
@@ -57,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       // Handle login action
-                      Get.to(const LoginScreen());
+                      Get.back();
                     },
                     child: const Text(
                       "Login",

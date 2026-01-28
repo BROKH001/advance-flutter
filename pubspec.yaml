@@ -47,6 +47,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   shared_preferences: ^2.5.2
   google_fonts: ^6.3.0
+  google_maps_flutter: ^2.14.0
   image_picker: ^1.1.2
 
   # ----------- Network ------------ #
@@ -54,6 +55,7 @@ dependencies:
 
   # Product Specific
   readmore: ^3.0.0
+  flutter_staggered_animations: ^1.1.1
 
 
 dev_dependencies:
@@ -70,7 +72,7 @@ flutter:
   # ===================== //   Init assets   // ======================== #
 
   assets:
-    # --------------  //    Image    //  -------------------- #
+    # --------------  //    Image    //  ------------------- #
     - assets/images/on_boarding_images/
     - assets/images/productions/
     - assets/images/others/
@@ -79,6 +81,13 @@ flutter:
 
     # --------------  //    Logo    //  -------------------- #
     - assets/logos/
+    - assets/logos/splash/
+    # --------------  //    Icon    //  -------------------- #
+    - assets/icons/payment_method/
+    - assets/icons/category/
+
+    # --------------  // Animation //  ----------------#
+    - assets/animations/
 
 
   # ================= //    How to Customise Fonts  // ==================== #

@@ -9,9 +9,11 @@ import 'package:e_commerce_app/features/shop/view/store/widgets/category_tab.dar
 import 'package:e_commerce_app/utils/constants/size.dart';
 import 'package:e_commerce_app/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../brand/all_brand.dart';
 
 class StorePage extends StatelessWidget {
   const StorePage({super.key});
@@ -21,9 +23,10 @@ class StorePage extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: SAppBar(
           title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-          actions: [SCartCounterIcon(onPressed: () {}, iconColor: TColors.darkGrey),],
+          actions: [SCartCounterIcon(iconColor: TColors.darkGrey),],
         ),
       
         body: NestedScrollView(
@@ -50,7 +53,7 @@ class StorePage extends StatelessWidget {
                       SizedBox(height: TSizes.spaceBtwSections),
       
                       /// -- Featured Brands
-                      TSectionHeading(title: 'Feature Brands', showActionButton: true, onPressed: () {}),
+                      TSectionHeading(title: 'Feature Brands', showActionButton: true, onPressed: () => Get.to(() => AllBrandScreen())),
                       SizedBox(height: TSizes.spaceBtwItems),
       
                       TGridLayout(itemCount: 4, mainAxisExtent: 70, itemBuilder: (_, index) {

@@ -22,7 +22,7 @@ class TPromoSlider extends StatelessWidget {
     final controller = Get.put(HomeController());
 
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.zero,
       child: Column(
         children: [
           CarouselSlider(
@@ -30,7 +30,7 @@ class TPromoSlider extends StatelessWidget {
               viewportFraction: 1,
               onPageChanged: (index, _) => controller.updatePageIndicator(index),
             ),
-            items: banners.map((url) => TRoundedImage(imageUrl: url)).toList()
+            items: banners.map((url) => TRoundedImage(imageUrl: url, fit: BoxFit.scaleDown)).toList()
           ),
           const SizedBox(height: TSizes.spaceBtwItems),
           Center(

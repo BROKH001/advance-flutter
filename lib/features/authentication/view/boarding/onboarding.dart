@@ -1,4 +1,6 @@
+import 'package:e_commerce_app/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/constants/image.dart';
@@ -14,6 +16,15 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final dark = THelperFunctions.isDarkMode(context);
+
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+            statusBarIconBrightness: dark ? Brightness.light : Brightness.dark,
+            statusBarBrightness: dark ? Brightness.light : Brightness.dark
+        )
+    );
 
     final controller = Get.put(OnBoardingController());
     return Scaffold(

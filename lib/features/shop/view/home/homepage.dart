@@ -1,6 +1,8 @@
+import 'package:e_commerce_app/features/shop/all_product/all_product.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/utils/constants/image.dart';
 import 'package:e_commerce_app/utils/constants/size.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/Layout/grid_layout.dart';
@@ -55,14 +57,16 @@ class HomeStore extends StatelessWidget {
 
             /// -- Body
             Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.only(top: TSizes.sm, left: TSizes.defaultSpace, right: TSizes.defaultSpace, bottom: TSizes.defaultSpace),
               child: Column(
                 children: [
                   TPromoSlider(banners: [TImage.banner1, TImage.banner2, TImage.banner3]),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
+                  TSectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => const AllProduct())),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+
                   /// -- GridView Products
-                  TSectionHeading(title: 'Popular Products', showActionButton: true, onPressed: () {}),
                   TGridLayout(itemCount: 4, itemBuilder: (context, index) => const TProductCartVertical()),
                 ],
               ),

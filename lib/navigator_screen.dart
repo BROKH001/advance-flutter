@@ -27,7 +27,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
       bottomNavigationBar: Obx(() =>
         NavigationBar(
-          height: 80,
+          height: 70,
           elevation: 0,
           backgroundColor: dark ? TColors.darkContainer : TColors.light,
           selectedIndex: controller.selectedIndex.value,

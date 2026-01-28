@@ -7,7 +7,8 @@ import '../../../../../utils/constants/size.dart';
 
 class TCartItems extends StatelessWidget {
   const TCartItems({
-    super.key, required this.showAddRemoveButton,
+    super.key,
+    this.showAddRemoveButton = true,
   });
 
   final bool showAddRemoveButton;
@@ -16,7 +17,7 @@ class TCartItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwItems),
-      itemCount: 8,
+      itemCount: 2,
       shrinkWrap: true,
       itemBuilder: (_, index) => Column(
         children: [

@@ -20,44 +20,44 @@ class TTermAndConditionalCheckBox extends StatelessWidget {
           child: Obx(
             () => Checkbox(
               value: controller.privacyPolicy.value,
-              onChanged: (value) {
-                controller.privacyPolicy.value = !controller.privacyPolicy.value;
-              },
+              onChanged: (value) => controller.privacyPolicy.value = !controller.privacyPolicy.value
             ),
           ),
         ),
         SizedBox(width: TSizes.spaceBtwItems),
-        Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(
-                text: "I agree to the ",
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              TextSpan(
-                text: "Privacy Policy",
-                style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? TColors.white : TColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? TColors.white : TColors.primary,
+        Expanded(
+          flex: 1,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: "I agree to the ",
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
-              ),
-              TextSpan(
-                text: " and ",
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              TextSpan(
-                text: "Terms of use",
-                style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? TColors.white : TColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? TColors.white : TColors.primary,
+                TextSpan(
+                  text: "Privacy Policy",
+                  style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? TColors.white : TColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? TColors.white : TColors.primary,
+                  ),
                 ),
-              ),
-            ],
+                TextSpan(
+                  text: " and ",
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                TextSpan(
+                  text: "Terms of use",
+                  style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? TColors.white : TColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? TColors.white : TColors.primary,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-        // const Expanded(child: Text("I agree to the Terms and Conditions")),
       ],
     );
   }

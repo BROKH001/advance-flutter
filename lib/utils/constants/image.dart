@@ -1,7 +1,7 @@
 class TImage {
   // --App Logo
-  static const String darkModeLogo = "assets/logos/my-logo-dark-mode.png";
-  static const String lightModeLogo = "assets/logos/my-logo-light-mode.png";
+  static const String darkModeLogo = "assets/logos/splash/logo_dark_mode.png";
+  static const String lightModeLogo = "assets/logos/splash/logo_light_mode.png";
 
   // --Social Logo
 
@@ -30,5 +30,15 @@ class TImage {
   static const String user = "assets/images/others/user.png";
   static const String userProfile = "assets/images/user/userProfile.png";
 
+  // -- payment method
+  static const String paypal = "assets/icons/payment_method/paypal.png";
+  static const String visa = "assets/icons/payment_method/visa.png";
+  static const String wing = "assets/icons/payment_method/wing.png";
+  static const String aba = "assets/icons/payment_method/aba.png";
+  static const String acleda = "assets/icons/payment_method/acleda.png";
+  static const String truemoney = "assets/icons/payment_method/truemoney.png";
+
+  // -- animation
+  static const String loading = "assets/animations/loading.json";
 
 }

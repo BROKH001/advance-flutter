@@ -1,16 +1,14 @@
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/logos/splash/my-logo-light.png
-#  branding: assets/logos/splash/my-logo-light.png
-#  branding_bottom_padding: 24
+  image: assets/logos/splash/logo_light_mode.png
   color_dark: "#2e2d2d"
-  image_dark: assets/logos/splash/my-logo-dark.png
-#  branding_dark: assets/logos/splash/my-logo-dark.png
+  image_dark: assets/logos/splash/logo_dark_mode.png
+  fullscreen: true
 
   android_12:
-    image: assets/logos/splash/my-logo-light.png
+    image: assets/logos/splash/logo_light_mode.png
     icon_background_color: "#ffffff"
-    image_dark: assets/logos/splash/my-logo-dark.png
+    image_dark: assets/logos/splash/logo_dark_mode.png
     icon_background_color_dark: "#2e2d2d"
 
   web: false

@@ -41,9 +41,9 @@ class TSearchBarContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(icon, color: TColors.darkerGrey),
+              Icon(icon, color: dark ? TColors.white : TColors.darkerGrey),
               const SizedBox(width: TSizes.spaceBtwItems),
-              Text(text, style: Theme.of(context).textTheme.bodySmall!.apply(color: TColors.darkerGrey)),
+              Text(text, style: Theme.of(context).textTheme.bodySmall!.apply(color: dark ? TColors.grey : TColors.darkGrey)),
             ],
           ),
         ),

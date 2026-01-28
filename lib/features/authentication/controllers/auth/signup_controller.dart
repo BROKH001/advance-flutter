@@ -30,7 +30,7 @@ class SignupController extends GetxController{
   Future<void> signup() async {
     try {
       // loading
-      TFullScreenLoading.openLoadingDialog('We are processing your Information...', TImage.github);
+      TFullScreenLoading.openLoadingDialog('We are processing your Information...', TImage.loading);
 
       // connected
       final isConnected = await NetWorkManager.instance.isConnected();
@@ -67,11 +67,13 @@ class SignupController extends GetxController{
 
       TLoaders.successSnackBar(title: 'Success', message: 'Account created successfully.');
 
-      Get.to(() => VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: emailController.text.trim(),));
 
     } catch(e) {
       TFullScreenLoading.stopLoading();
-      TLoaders.errorSnackBar(title: 'On Snap', message: e.toString());
+      TLoaders.errorSnackBar(title: 'On Snap!', message: e.toString());
+    } finally {
+      TFullScreenLoading.stopLoading();
     }
   }
 

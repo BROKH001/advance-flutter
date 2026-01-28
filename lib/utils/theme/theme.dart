@@ -6,6 +6,7 @@ import 'customs/bottom_sheet_theme.dart';
 import 'customs/checkbox_theme.dart';
 import 'customs/chip_theme.dart';
 import 'customs/elevated_button_theme.dart';
+import 'customs/icon_theme.dart';
 import 'customs/outline_button_theme.dart';
 import 'customs/text_field_theme.dart';
 import 'customs/text_theme.dart';
@@ -28,7 +29,7 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-    // iconTheme: TIconTheme.lightIconTheme,
+    iconTheme: TIconTheme.lightIconTheme,
   );
 
   /// Dark Theme
@@ -46,6 +47,6 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
-    // iconTheme: TIconTheme.darkIconTheme,
+    iconTheme: TIconTheme.darkIconTheme,
   );
 }

@@ -1,4 +1,3 @@
-
 import 'features/authentication/view/boarding/onboarding.dart';
 import 'package:e_commerce_app/binding/general_bindings.dart';
 import 'package:flutter/material.dart';

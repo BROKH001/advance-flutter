@@ -1,13 +1,11 @@
-import 'package:e_commerce_app/features/authentication/controllers/auth/signup_controller.dart';
 import 'package:e_commerce_app/features/authentication/view/signup/widgets/term_conditional_checkbox.dart';
-import 'package:e_commerce_app/utils/constants/size.dart';
+import 'package:e_commerce_app/features/authentication/controllers/auth/signup_controller.dart';
 import 'package:e_commerce_app/utils/constants/text_string.dart';
 import 'package:e_commerce_app/utils/validators/validator.dart';
+import 'package:e_commerce_app/utils/constants/size.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../../../navigator_screen.dart';
+import 'package:get/get.dart';
 
 class TSignUpForm extends StatelessWidget {
   const TSignUpForm({super.key});
@@ -15,7 +13,6 @@ class TSignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
-    bool agree = false;
     return Form(
       key: controller.signupFormKey,
       child: Column(
@@ -33,6 +30,7 @@ class TSignUpForm extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: TTexts.firstName,
                     prefixIcon: Icon(Iconsax.user),
+
                   ),
                 ),
               ),
@@ -46,7 +44,6 @@ class TSignUpForm extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: TTexts.lastName,
                     prefixIcon: Icon(Iconsax.user),
-                    // border: OutlineInputBorder(),
                   ),
                 ),
               ),
@@ -110,11 +107,7 @@ class TSignUpForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-              onPressed: () {
-                // controller.signup();
-                // Get.to(VerifyEmailScreen());
-                Get.to(() => NavigationMenu());
-              },
+              onPressed: () => controller.signup(),
               child: const Text(
                 "Create Account",
                 style: TextStyle(fontWeight: FontWeight.bold),

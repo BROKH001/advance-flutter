@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../common/widgets/loaders/animation_loading.dart';
 
 class TFullScreenLoading {
+  static final dark = THelperFunctions.isDarkMode(Get.context!);
   static void openLoadingDialog(String text, String animation) {
     showDialog(
       context: Get.overlayContext!,
@@ -14,12 +15,9 @@ class TFullScreenLoading {
           (_) => PopScope(
         canPop: false,
         child: Container(
-          color:
-          THelperFunctions.isDarkMode(Get.context!)
-              ? TColors.dark
-              : TColors.white,
+          color: dark ? TColors.dark : TColors.white,
           width: double.infinity,
-          height: double.infinity,
+          height: THelperFunctions.screenHeight(),
           child: Column(
             children: [
               const SizedBox(height: 250),
